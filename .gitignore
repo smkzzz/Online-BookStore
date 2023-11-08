@@ -6,7 +6,8 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
-
+replit.nix
+.replit
 node_modules
 dist
 dist-ssr
