@@ -5,14 +5,14 @@ function FormTop({table,title}) {
   return (
     <div className="flex flex-col gap-3">
         <span className="">
-          <Link className="hover:underline" to={"/" + table}>
+          <Link className="hover:underline" to={"/admin/" + table}>
             {table.toUpperCase()}
           </Link>{" "}
           / {title}
         </span>
         <div className="flex flex-row items-center gap-4 ">
           <Link
-            to="/customers"
+            to="/admin/customers"
             className="hover:bg-slate-600  duration-300 p-2 rounded-md bg-opacity-[0.1] "
           >
             <AiOutlineArrowLeft size={20} />

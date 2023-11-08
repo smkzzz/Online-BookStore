@@ -36,7 +36,7 @@ function Top({tableName ,searchHandle}) {
         </div>
 
         <div>
-          <Link to={`/${tableName.toLowerCase()}/create`} className="p-2 bg-blue-600 rounded-md text-sm flex flex-row items-center gap-2 cursor-pointer hover:bg-blue-500 duration-150 transition-colors">
+          <Link to={`/admin/${tableName.toLowerCase()}/create`} className="p-2 bg-blue-600 rounded-md text-sm flex flex-row items-center gap-2 cursor-pointer hover:bg-blue-500 duration-150 transition-colors">
             <AiOutlineUserAdd size={24} />
             <a className="">Create</a>
           </Link>

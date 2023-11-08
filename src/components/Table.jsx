@@ -80,7 +80,7 @@ function Table({ tableName, notify }) {
   };
   const getLists = async (np) => {
     try {
-      const apiUrl = `http://localhost:5000/${tableName}/${np ? np : page}`;
+      const apiUrl = `http://localhost:5000/${tableName}/${np ? np : page}/10`;
       const response = await fetch(apiUrl);
       if (!response.ok) throw new Error("Network response was not ok");
       const data = await response.json();
@@ -155,24 +155,26 @@ function Table({ tableName, notify }) {
                       {Object.keys(data.results[0])
                         .sort((a, b) => a.length - b.length)
                         .map((key, index) => (
+
+                            
                           <td
                             key={index}
                             class={`${index === 0 ? "w-4 p-4" : "px-6"} `}
                           >
-                            {e[key]}
+                            {(e[key]+"").includes('https') ? <img className="w-10 rounded-md" src={e[key]}/> : e[key]}
                           </td>
                         ))}
 
                       <td className="px-6 py-2 text-left space-x-2">
                         <div className="flex flex-row gap-4 items-center">
-                          <Link to={`/${tableName.toLowerCase()}/view/${e.id}`}>
+                          <Link to={`/admin/${tableName.toLowerCase()}/view/${e.id}`}>
                             <AiFillEye
                               size={37}
                               className="border-2 hover:bg-green-500 duration-200 transition-all hover:text-slate-100 border-green-500 text-green-500 rounded-md p-2"
                             />
                           </Link>
 
-                          <Link to={`/${tableName.toLowerCase()}/edit/${e.id}`}>
+                          <Link to={`/admin/${tableName.toLowerCase()}/edit/${e.id}`}>
                             <AiFillEdit
                               size={37}
                               className="border-2 hover:bg-blue-600 duration-200 transition-all hover:text-slate-100 border-blue-600 text-blue-600 rounded-md p-2"
@@ -284,6 +286,8 @@ function Table({ tableName, notify }) {
                 </td>
                 <td class="px-6 py-3"></td>
                 <td class="px-6 py-3"></td>
+                <td class="px-6 py-3"></td>
+
                 {tableName === "Items" ? (
                   <>
                     <td class="px-6 py-3"></td>

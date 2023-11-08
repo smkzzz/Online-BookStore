@@ -12,7 +12,7 @@ function Sidebar({collapse,setCollapse}) {
         <span className="flex flex-row items-center  gap-10">Bookstore  <TbLayoutSidebarLeftCollapse className='cursor-pointer md:hidden'onClick={()=>setCollapse((prev)=>!prev)}/></span>
       </div>
       <ul className="flex flex-col p-4">
-        <Link to='/customers'className="group flex flex-row items-center gap-4 mb-4">
+        <Link to='/admin/customers'className="group flex flex-row items-center gap-4 mb-4">
           <span className="cursor-pointer hover:text-blue-400 relative flex flex-row items-center gap-4">
             
             <HiUsers />
@@ -23,7 +23,7 @@ function Sidebar({collapse,setCollapse}) {
   </span>
         </Link>
 
-        <Link to='/items'className="group flex flex-row items-center gap-4 mb-4">
+        <Link to='/admin/items'className="group flex flex-row items-center gap-4 mb-4">
           <span className="cursor-pointer hover:text-blue-400 relative flex flex-row items-center gap-4">
             
             <IoBookSharp />

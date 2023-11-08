@@ -5,8 +5,8 @@ import { useNavigate } from "react-router-dom";
 
 function Form({  apiUrl, table,notify,msg}) {
   const fields = {
-    items: ["ISBN", "TYPE", "GENRE", "PRICE", "TITLE", "AUTHOR"],
-    customers: ["NAME", "EMAIL", "ADDRESS"],
+    items: ["ISBN", "TYPE", "GENRE", "PRICE", "TITLE", "AUTHOR","IMAGE"],
+    customers: ["NAME", "EMAIL", "ADDRESS","PASSWORD"],
   };
   const navigate = useNavigate();
 
@@ -59,7 +59,7 @@ function Form({  apiUrl, table,notify,msg}) {
         notify(ok);
         // Handle the response from the API
         console.log("API Response:", data);
-        navigate(`/${table.toLowerCase()}`);
+        navigate(`/admin/${table.toLowerCase()}`);
         setLoading(false);
       })
       .catch((error) => {
@@ -89,7 +89,7 @@ function Form({  apiUrl, table,notify,msg}) {
           <label className={`${status}`}>{e}</label>
           <input
             required
-            key={index}
+            key={e}
             className={`w-full p-2 border-none outline-none bg-slate-700 ${status} rounded-md`}
             autoComplete="off"
             type="text"

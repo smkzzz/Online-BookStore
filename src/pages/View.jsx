@@ -37,7 +37,7 @@ function View({ table, notify }) {
         .map((key, index) => (
           <div>
             <span className="text-xl font-bold">{key.toUpperCase()}</span>
-            <p>{data[0][key]}</p>
+            {key.toUpperCase() === 'IMAGE' ? <img src={data[0][key]} className="w-20 rounded-md"/> :<p>{data[0][key]}</p>}
           </div>
         ))}
     </div>
