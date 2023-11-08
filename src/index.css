@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    background-color: #1F2937;
+}
+
+/* Change scrollbar track color */
+::-webkit-scrollbar {
+    background-color: #020617; /* Blue color */
+  }
+  
+  /* Change scrollbar thumb color */
+  ::-webkit-scrollbar-thumb {
+    background-color: #020617; /* Slightly darker blue color */
+  }
+
+  ::-webkit-scrollbar {
+    width: 12px; /* Set the width to 12 pixels */
+  }
+  ::-webkit-scrollbar-corner {
+    background-color: #ffffff; /* Change the color of the scrollbar corner */
+  }
+    
